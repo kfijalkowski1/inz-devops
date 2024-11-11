@@ -16,5 +16,6 @@ spec:
       containers:
         - name: react-app
           image: gambolkf/inz-front:main
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
