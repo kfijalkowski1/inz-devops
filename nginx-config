@@ -1,0 +1,41 @@
+# Proxy on port 80 to Minikube IP 192.168.49.2:30000 -- frontend
+server {
+    listen 80;
+    server_name 49.13.73.66;
+
+    location / {
+        proxy_pass http://192.168.49.2:30000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+
+# Proxy on port 8080 to Minikube IP 192.168.49.2:30001 -- backend
+server {
+    listen 8080;
+    server_name 49.13.73.66;
+
+    location / {
+        proxy_pass http://192.168.49.2:30001;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+
+# Proxy on port 8081 to Minikube IP 192.168.49.2:30002 -- kibana
+server {
+    listen 8081;
+    server_name 49.13.73.66;
+
+    location / {
+        proxy_pass http://192.168.49.2:30002;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
