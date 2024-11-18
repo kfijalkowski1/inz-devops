@@ -73,7 +73,7 @@ esJavaOpts: "" # example: "-Xmx1g -Xms1g"
 
 resources:
   requests:
-    cpu: "100m"
+    cpu: "1000m"
     memory: "2Gi"
   limits:
     cpu: "1000m"
@@ -218,10 +218,10 @@ sysctlVmMaxMapCount: 262144
 
 readinessProbe:
   failureThreshold: 3
-  initialDelaySeconds: 10
+  initialDelaySeconds: 20
   periodSeconds: 10
   successThreshold: 3
-  timeoutSeconds: 5
+  timeoutSeconds: 15
 
 # https://www.elastic.co/guide/en/elasticsearch/reference/7.15/cluster-health.html#request-params wait_for_status
 clusterHealthCheckParams: "wait_for_status=green&timeout=1s"
