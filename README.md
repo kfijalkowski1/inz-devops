@@ -33,3 +33,4 @@ Why? Because minikube has one node that is not access-able from internet, so the
 ## Setup ELK
 ELK - Elasticsearch, Logstash, and Kibana
 - based on this [tutorial](https://surajsoni3332.medium.com/setting-up-elk-stack-on-kubernetes-a-step-by-step-guide-227690eb57f4)
+- based on this helpful [video](https://www.youtube.com/watch?v=SU--XMhbWoY&t=3s)
