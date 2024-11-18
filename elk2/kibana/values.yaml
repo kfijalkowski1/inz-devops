@@ -112,7 +112,7 @@ updateStrategy:
   type: "Recreate"
 
 service:
-  type: nodePort
+  type: NodePort
   loadBalancerIP: ""
   port: 5601
   nodePort: "30002"
