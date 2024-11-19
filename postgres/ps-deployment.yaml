@@ -15,7 +15,6 @@ spec:
       containers:
         - name: postgres
           image: 'postgres:14'
-          command: ['postgres', '-c', "wal_level='logical'"]
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5432
