@@ -20,7 +20,7 @@ Why? Because minikube has one node that is not access-able from internet, so the
 - restart nginx service: `sudo systemctl restart nginx`
 
 ## Deploy postgres
-- use this [tutorial](https://www.digitalocean.com/community/tutorials/how-to-deploy-postgres-to-kubernetes-cluster)
+- use configs in postgres config according to this [tutorial](https://www.digitalocean.com/community/tutorials/how-to-deploy-postgres-to-kubernetes-cluster)
 
 ## Deploy front-end:
 - create namespace front: `kubectl create namespace front`
