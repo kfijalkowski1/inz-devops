@@ -1,0 +1,14 @@
+[
+    {
+        "database": "estate_management",
+        "index": "posts",
+        "nodes": {
+            "table": "posts",
+            "columns": [
+                "id",
+                "title",
+                "description"
+            ]
+        }
+    }
+]

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pg-sync
+  namespace: back
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pg-sync
+  template:
+    metadata:
+      labels:
+        app: pg-sync
+    spec:
+      containers:
+        - name: pg-sync
+          image: gambolkf/inz-pg_sync:latest
+          imagePullPolicy: Always
