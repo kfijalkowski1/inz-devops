@@ -21,6 +21,22 @@ Why? Because minikube has one node that is not access-able from internet, so the
 
 ## Deploy postgres
 - use configs in postgres config according to this [tutorial](https://www.digitalocean.com/community/tutorials/how-to-deploy-postgres-to-kubernetes-cluster)
+- set val_level to logical to support pg_sync
+    - log on postgres pod:
+
+        `kubectl exec -it postgres-dbfd84ff5-62hxs -n default -- psql -h localhost -U postgres --password -p 5432`
+    - run in postgres:
+
+        `ALTER SYSTEM SET wal_level = logical;`
+
+        `SELECT pg_reload_conf();`
+        
+    - restart deployment:
+
+        `kubectl rollout restart deployment postgres -n default`
+    - after restart you can check with:
+
+        `SHOW wal_level;`
 
 ## Deploy front-end:
 - create namespace front: `kubectl create namespace front`
@@ -32,5 +48,4 @@ Why? Because minikube has one node that is not access-able from internet, so the
 
 ## Setup ELK
 ELK - Elasticsearch, Logstash, and Kibana
-- based on this [tutorial](https://surajsoni3332.medium.com/setting-up-elk-stack-on-kubernetes-a-step-by-step-guide-227690eb57f4)
 - based on this helpful [video](https://www.youtube.com/watch?v=SU--XMhbWoY&t=3s)
