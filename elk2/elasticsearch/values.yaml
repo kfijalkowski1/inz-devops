@@ -15,7 +15,7 @@ roles:
   remote_cluster_client: "true"
   ml: "true"
 
-replicas: 0
+replicas: 1
 minimumMasterNodes: 1
 
 esMajorVersion: ""
@@ -32,9 +32,9 @@ esConfig: {}
 # Extra environment variables to append to this nodeGroup
 # This will be appended to the current 'env:' key. You can use any of the kubernetes env
 # syntax here
-extraEnvs: []
-#  - name: MY_ENVIRONMENT_VAR
-#    value: the_value_goes_here
+extraEnvs:
+  - name: ES_JAVA_OPTS
+    value: "-Xms2g -Xmx2g"
 
 # Allows you to load environment variables from kubernetes secret or config map
 envFrom: []
