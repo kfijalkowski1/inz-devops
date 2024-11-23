@@ -28,15 +28,17 @@ Why? Because minikube has one node that is not access-able from internet, so the
     - run in postgres:
 
         `ALTER SYSTEM SET wal_level = logical;`
+        `ALTER SYSTEM SET max_replication_slots = 5;` # has to at least one
 
         `SELECT pg_reload_conf();`
-        
+
     - restart deployment:
 
         `kubectl rollout restart deployment postgres -n default`
     - after restart you can check with:
 
         `SHOW wal_level;`
+        `SHOW max_replication_slots;`
 
 ## Deploy front-end:
 - create namespace front: `kubectl create namespace front`
