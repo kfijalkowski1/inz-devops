@@ -13,5 +13,5 @@ RUN pip install pgsync
 COPY schema.json /app/schema.json
 COPY .env /app/.env
 
-CMD ["bootstrap", "--config", "/app/schema.json"]
-CMD ["pgsync", "--config", "/app/schema.json", "--daemon"]
+CMD ["sh", "-c", "bootstrap --config /app/schema.json && pgsync --config /app/schema.json --daemon"]
+
