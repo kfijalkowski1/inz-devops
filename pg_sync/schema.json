@@ -10,5 +10,17 @@
                 "description"
             ]
         }
+    },
+    {
+        "database": "estate_management",
+        "index": "requests",
+        "nodes": {
+            "table": "requests",
+            "columns": [
+                "id",
+                "title",
+                "description"
+            ]
+        }
     }
 ]

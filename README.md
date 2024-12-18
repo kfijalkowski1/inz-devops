@@ -9,7 +9,7 @@
 - Add sudo user [tutorial](https://www.digitalocean.com/community/tutorials/how-to-create-a-new-sudo-enabled-user-on-ubuntu)
 - Deploy docker using this [tutorial](https://docs.docker.com/engine/install/ubuntu/)
 - Deploy minikube using this [tutorial](https://minikube.sigs.k8s.io/docs/start/?arch=%2Fwindows%2Fx86-64%2Fstable%2F.exe+download)
-- Important: change minikube RAM to 6GB (I have machine with 8 available)
+- Important: change minikube RAM to 12GB (I have machine with 16 available)
 
 ## Deploy nginx as proxy
 Why? Because minikube has one node that is not access-able from internet, so the connection goes like that: internet -> server -> minikube -> k8s svc.
