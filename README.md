@@ -1,6 +1,11 @@
 # Repo for the devops related stuff for eng work
 
-- parent repo:
+This particular one is for the dev ops, other repos:
+
+- text: https://github.com/kfijalkowski1/inz-thesis-text/
+- back-end: https://github.com/kfijalkowski1/inz-backend/
+- front-end: https://github.com/kfijalkowski1/inz-front/
+- dev-ops: https://github.com/kfijalkowski1/inz-devops/
 
 # Steps done:
 
